@@ -28,7 +28,24 @@
 					bgcolor=bg,
                		framesep=3mm}         		
                		
-\newenvironment{gcode}{\textcolor{tg}{\texttt{}{}}}               		
+\newenvironment{gcode}{\textcolor{tg}{\texttt{}{}}}   
+
+%suggested by ilpssun, %http://tex.stackexchange.com/questions/48473/best-way-to-give-sources-of-images-used-in-a-beamer-presentation 
+\usepackage[absolute,overlay]{textpos}
+
+\setbeamercolor{framesource}{fg=gray}
+\setbeamerfont{framesource}{size=\tiny}
+
+\newcommand{\source}[1]{\begin{textblock*}{4cm}(8.7cm,8.6cm)
+    \begin{beamercolorbox}[ht=0.5cm,right]{framesource}
+        \usebeamerfont{framesource}\usebeamercolor[fg]{framesource} Source: {#1}
+    \end{beamercolorbox}
+\end{textblock*}}
+
+
+
+
+            		
                		               		
 \title{Pygame!}
 \subtitle{Python User Group Freiburg}
@@ -405,8 +422,8 @@ Defining a color
 Use for example \textcolor{tg}{\texttt{colorpicker.com}}:
 \begin{center}
 \includegraphics[width=0.8\textwidth]{img/colorpicker.png}
+\source{Paul Craven, \href{http://programarcadegames.com/}{programarcadegames.com/}}
 \end{center}
-
 \end{frame}
 
 %---------------------------------------------------------------------
@@ -427,6 +444,7 @@ Defining a position:
 To the reference coordinate system
 \begin{center}
 \includegraphics[width=0.6\textwidth]{img/coordinates.png}
+\source{Paul Craven, \href{http://programarcadegames.com/}{programarcadegames.com/}}
 \end{center}
 \end{frame}
 
